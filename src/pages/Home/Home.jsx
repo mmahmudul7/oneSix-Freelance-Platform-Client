@@ -1,3 +1,4 @@
+import Category from "../../components/Categories/Category";
 import Job from "../../components/Jobs/Job";
 import Features from "./Features";
 import Hero from "./Hero";
@@ -8,6 +9,7 @@ const Home = () => {
     <div>
       <Hero />
       <Features />
+      <Category />
       <Job />
       <Testimonials />
     </div>
