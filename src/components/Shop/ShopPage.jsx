@@ -1,32 +1,11 @@
-import {useEffect, useState} from "react";
-import apiClient from "../../services/api-client";
+import {useState} from "react";
 import JobList from "./JobList";
 import Pagination from "./Pagination";
+import useFetchJobs from "../../hooks/useFetchJobs";
 
 const ShopPage = () => {
-  const [jobs, setJobs] = useState([]);
-  const [loading, setLoading] = useState([]);
-  const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    fetchJobs();
-  }, [currentPage]);
-
-  const fetchJobs = async () => {
-    setLoading(true);
-    try {
-      const response = await apiClient.get(`/jobs/?page=${currentPage}`);
-      const data = await response.data;
-
-      setJobs(data.results);
-      setTotalPages(Math.ceil(data.count / 9));
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const {jobs, loading, totalPages} = useFetchJobs(currentPage);
 
   return (
     <div>

@@ -11,7 +11,9 @@ const JobItem = ({job}) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-gray-700 font-normal">{job.name}</h2>
+        <h2 className="card-title text-gray-700 font-normal link link-hover">
+          {job.name}
+        </h2>
         <div className="flex justify-between">
           <h3 className="font-bold text-xl">Form ${job.price}</h3>
           <button className="btn btn-primary">Buy Now</button>
