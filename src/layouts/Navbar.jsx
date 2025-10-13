@@ -30,15 +30,7 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <a>Jobs</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <Link to="/jobs">Jobs</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
@@ -55,7 +47,8 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <details>
+            <Link to="/jobs">Jobs</Link>
+            {/* <details>
               <summary>Jobs</summary>
               <ul className="menu xl:menu-horizontal bg-base-200 rounded-box lg:min-w-max absolute left-1/2 -translate-x-1/2">
                 <li>
@@ -138,7 +131,7 @@ const Navbar = () => {
                   </ul>
                 </li>
               </ul>
-            </details>
+            </details> */}
           </li>
           <li>
             <Link to="/about">About</Link>
