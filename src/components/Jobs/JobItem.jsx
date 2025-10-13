@@ -10,11 +10,10 @@ const JobItem = ({job}) => {
           className="rounded-xl"
         />
       </figure>
-      <div className="card-body items-center text-center">
-        <h2 className="card-title">{job.name}</h2>
-        <h3 className="font-bold text-xl text-green-700">${job.price}</h3>
-        <p>{job.description}</p>
-        <div className="card-actions mt-1">
+      <div className="card-body">
+        <h2 className="card-title text-gray-700 font-normal">{job.name}</h2>
+        <div className="flex justify-between">
+          <h3 className="font-bold text-xl">Form ${job.price}</h3>
           <button className="btn btn-primary">Buy Now</button>
         </div>
       </div>

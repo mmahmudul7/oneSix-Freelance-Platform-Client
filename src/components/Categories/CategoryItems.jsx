@@ -1,5 +1,3 @@
-import {CgMoveTask} from "react-icons/cg";
-
 const CategoryItems = ({index, category}) => {
   const gradients = [
     "from-emerald-200 to-cyan-300",
@@ -19,9 +17,6 @@ const CategoryItems = ({index, category}) => {
   const badgeBg = isDark
     ? "bg-white/20 text-slate-100"
     : "bg-white/70 text-gray-600";
-  const buttonText = isDark
-    ? "text-white hover:text-slate-200"
-    : "text-blue-600 hover:text-blue-700";
 
   return (
     <div
@@ -32,31 +27,19 @@ const CategoryItems = ({index, category}) => {
         hover:scale-[1.03] hover:from-opacity-100 hover:to-opacity-100
       `}
     >
-      <div className="p-4 flex flex-col">
-        {/* Header */}
-        <div className="flex justify-between items-start mb-2">
-          <div className="h-9 w-9 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xl shadow-sm">
-            {category.name.charAt(0)}
-          </div>
-          <span className={`text-sm px-2 py-1 rounded-full ${badgeBg}`}>
-            {category.job_count} items
-          </span>
-        </div>
-
+      <div className="pt-3 pr-4 pb-4 pl-4 flex flex-col">
         {/* Title + Description */}
         <h3 className={`text-xl font-bold mb-1 ${textPrimary}`}>
           {category.name}
         </h3>
-        <p className={`text-sm mb-1 flex-grow ${textSecondary}`}>
+        <p className={`text-sm mb-2 flex-grow ${textSecondary}`}>
           {category.description}
         </p>
-
-        {/* Button */}
-        <button
-          className={`font-semibold transition-colors flex items-center gap-1 ${buttonText}`}
-        >
-          Explore <CgMoveTask className="text-lg" />
-        </button>
+        <div>
+          <span className={`text-sm px-3 py-0.5 rounded-full ${badgeBg}`}>
+            {category.job_count} Jobs
+          </span>
+        </div>
       </div>
     </div>
   );
