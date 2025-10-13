@@ -1,5 +1,6 @@
 import {BsTwitterX} from "react-icons/bs";
 import {FaWhatsapp} from "react-icons/fa";
+import {Link} from "react-router";
 
 const Footer = () => {
   return (
@@ -28,7 +29,9 @@ const Footer = () => {
       </footer>
       <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
         <aside className="grid-flow-col items-center">
-          <img src="/favicon.png" alt="logo" />
+          <Link to="/">
+            <img src="/favicon.png" alt="logo" />
+          </Link>
           <p>
             OneSix Freelance Marketplace
             <br />

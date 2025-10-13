@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import JobItem from "./JobItem";
 import {SwiperSlide, Swiper} from "swiper/react";
 import {Navigation} from "swiper/modules";
-
+import {Link} from "react-router";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,12 +28,12 @@ const Job = () => {
       <div className="py-12 px-4 max-w-7xl mx-auto">
         <div className="flex justify-between items-center px-4 md:px-8 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold">All Jobs</h2>
-          <a
-            href="#"
-            className="btn btn-primary px-6 py-6 rounded-full text-lg"
+          <Link
+            to="/jobs"
+            className="btn btn-primary px-4 py-4 rounded-full text-lg"
           >
             View All
-          </a>
+          </Link>
         </div>
         {/* Spinner  */}
         {isLoading && (

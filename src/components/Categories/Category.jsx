@@ -13,7 +13,7 @@ const Category = () => {
       {/* Category Heading  */}
       <div className="flex justify-between items-center md-8 px-4 py-4">
         <h2 className="text-3xl font-bold">Browse Categories</h2>
-        <a href="#" className="btn btn-primary px-6 py-6 rounded-full text-lg">
+        <a href="#" className="btn btn-primary px-4 py-4 rounded-full text-lg">
           View All
         </a>
       </div>
