@@ -2,13 +2,9 @@ import defaultImage from "../../assets/default_img.jpg";
 
 const JobItem = ({job}) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure className="px-5 pt-5">
-        <img
-          src={job.images.length > 0 ? job.images[0].image : defaultImage}
-          alt="Shoes"
-          className="rounded-xl"
-        />
+    <div className="card bg-base-100 shadow-sm">
+      <figure>
+        <img src={job.images.length > 0 ? job.images[0].image : defaultImage} />
       </figure>
       <div className="card-body">
         <h2 className="card-title text-gray-700 font-normal link link-hover">
