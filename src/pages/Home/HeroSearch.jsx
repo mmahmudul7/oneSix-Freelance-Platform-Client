@@ -17,7 +17,7 @@ const HeroSearch = ({onSearch}) => {
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         placeholder="Search jobs..."
-        className="flex-1 p-3 rounded-l-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-800 outline-none shadow-sm transition duration-200"
+        className="flex-1 p-3 rounded-l-lg bg-gray-50 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-800 outline-none shadow-sm transition duration-200"
       />
       <button
         onClick={handleSearch}

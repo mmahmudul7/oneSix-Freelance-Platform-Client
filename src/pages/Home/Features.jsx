@@ -20,10 +20,10 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 bg-base-100">
+    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-300">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold">Why Choose Onesix?</h2>
-        <p className="text-gray-500 mt-2">
+        <p className="text-gray-900 mt-2">
           Empowering freelancers & clients equally
         </p>
       </div>

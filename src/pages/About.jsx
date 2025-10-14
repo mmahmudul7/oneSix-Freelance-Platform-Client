@@ -9,7 +9,7 @@ const About = () => {
           initial={{opacity: 0, y: -30}}
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.6}}
-          className="text-4xl md:text-5xl font-bold text-center text-blue-600 mb-10"
+          className="text-4xl md:text-5xl font-bold text-center text-blue-800 mb-10"
         >
           About OneSix.dev
         </motion.h1>
@@ -21,7 +21,7 @@ const About = () => {
           className="text-lg text-center max-w-3xl mx-auto mb-10"
         >
           Welcome to{" "}
-          <span className="font-semibold text-blue-600">OneSix.dev</span> — a
+          <span className="font-semibold text-blue-800">OneSix.dev</span> — a
           creative marketplace where talented professionals bring ideas to life.
           We connect clients with skilled designers, developers, and creators to
           deliver quality, innovation, and results.
@@ -33,7 +33,7 @@ const About = () => {
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <PenTool className="mx-auto text-blue-500 mb-4" size={40} />
+            <PenTool className="mx-auto text-blue-800 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Design & Branding</h3>
             <p className="text-gray-600">
               We craft clean and professional visuals — from logo redraws, color
@@ -47,7 +47,7 @@ const About = () => {
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <SquareTerminal className="mx-auto text-blue-500 mb-4" size={40} />
+            <SquareTerminal className="mx-auto text-blue-800 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">App & Automation</h3>
             <p className="text-gray-600">
               We create custom <strong>Python automation tools</strong> that
@@ -61,7 +61,7 @@ const About = () => {
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <PanelsTopLeft className="mx-auto text-blue-500 mb-4" size={40} />
+            <PanelsTopLeft className="mx-auto text-blue-800 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Web Development</h3>
             <p className="text-gray-600">
               We build modern, high-performance websites and web apps using{" "}
@@ -76,7 +76,7 @@ const About = () => {
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <Users className="mx-auto text-blue-500 mb-4" size={40} />
+            <Users className="mx-auto text-blue-800 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Team Collaboration</h3>
             <p className="text-gray-600">
               Our creative team works together to bring ideas to life —
@@ -92,14 +92,14 @@ const About = () => {
           transition={{delay: 0.4, duration: 0.8}}
           className="text-center mt-16"
         >
-          <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+          <h2 className="text-2xl font-semibold text-blue-800 mb-4">
             Join us. Create. Collaborate. Grow.
           </h2>
           <p className="text-gray-700">
             Want to work with us or join as a seller? Contact us at{" "}
             <a
               href="mailto:admin@onesix.dev"
-              className="text-blue-600 font-medium underline"
+              className="text-blue-800 font-medium underline"
             >
               admin@onesix.dev
             </a>

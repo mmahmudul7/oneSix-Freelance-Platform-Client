@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero min-h-[80vh] bg-base-200">
+    <section className="hero min-h-[80vh] bg-gray-50">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src="https://i.postimg.cc/QdhLMRy6/onesix-hero.jpg"

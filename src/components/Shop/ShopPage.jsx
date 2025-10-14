@@ -40,9 +40,15 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pt-8">
-      <h1 className="text-3xl font-bold">All Jobs</h1>
+    <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 space-y-8 ">
+      {/* Title */}
+      <div className="flex justify-between items-center">
+        <h1 className="text-3xl font-bold text-gray-800 border-b pb-2">
+          All Jobs
+        </h1>
+      </div>
 
+      {/* Filter Section */}
       <FilterSection
         priceRange={priceRange}
         handlePriceChange={handlePriceChange}
@@ -55,13 +61,29 @@ const ShopPage = () => {
         handleSorting={setSortOrder}
       />
 
-      <JobList jobs={jobs} loading={loading} />
+      {/* Job List / Loading / Empty */}
+      {loading ? (
+        <div className="flex justify-center items-center py-20 min-h-[50vh]">
+          <span className="loading loading-ring loading-xl text-primary"></span>
+        </div>
+      ) : jobs.length > 0 ? (
+        <JobList jobs={jobs} loading={false} />
+      ) : (
+        <div className="text-center text-gray-500 py-20 text-lg">
+          No jobs found for your search.
+        </div>
+      )}
 
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        handlePageChange={setCurrentPage}
-      />
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <div className="pt-6">
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            handlePageChange={setCurrentPage}
+          />
+        </div>
+      )}
     </div>
   );
 };
