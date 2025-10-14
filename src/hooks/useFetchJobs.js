@@ -5,7 +5,8 @@ const useFetchJobs = (
   currentPage,
   priceRange,
   selectedCategory,
-  searchQuery
+  searchQuery,
+  sortOrder
 ) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState([]);
@@ -14,7 +15,7 @@ const useFetchJobs = (
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
-      const url = `/jobs/?keyword=&category=${selectedCategory}&min_price=${priceRange[0]}&max_price=${priceRange[1]}&page=${currentPage}&search=${searchQuery}`;
+      const url = `/jobs/?keyword=&category=${selectedCategory}&min_price=${priceRange[0]}&max_price=${priceRange[1]}&page=${currentPage}&search=${searchQuery}&ordering=${sortOrder}`;
       try {
         const response = await apiClient.get(url);
         const data = await response.data;
@@ -28,7 +29,7 @@ const useFetchJobs = (
       }
     };
     fetchJobs();
-  }, [currentPage, priceRange, selectedCategory, searchQuery]);
+  }, [currentPage, priceRange, selectedCategory, searchQuery, sortOrder]);
 
   return {jobs, loading, totalPages};
 };
