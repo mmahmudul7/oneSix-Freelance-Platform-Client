@@ -1,4 +1,5 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useSearchParams} from "react-router-dom";
 import JobList from "./JobList";
 import Pagination from "./Pagination";
 import useFetchJobs from "../../hooks/useFetchJobs";
@@ -6,10 +7,13 @@ import FilterSection from "./FilterSection";
 import useFetchCategories from "../../hooks/useFetchCategories";
 
 const ShopPage = () => {
+  const [searchParams] = useSearchParams();
+  const initialQuery = searchParams.get("search") || "";
+
   const [currentPage, setCurrentPage] = useState(1);
   const [priceRange, setPriceRange] = useState([1, 1000]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState(initialQuery);
 
   const {jobs, loading, totalPages} = useFetchJobs(
     currentPage,
@@ -19,6 +23,10 @@ const ShopPage = () => {
   );
 
   const categories = useFetchCategories();
+
+  useEffect(() => {
+    setSearchQuery(initialQuery);
+  }, [initialQuery]);
 
   const handlePriceChange = (index, value) => {
     setPriceRange((prev) => {
@@ -32,6 +40,7 @@ const ShopPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 pt-8">
       <h1 className="text-3xl font-bold">All Jobs</h1>
+
       <FilterSection
         priceRange={priceRange}
         handlePriceChange={handlePriceChange}
@@ -39,8 +48,11 @@ const ShopPage = () => {
         selectedCategory={selectedCategory}
         handleCategoryChange={setSelectedCategory}
         handleSearchQuery={setSearchQuery}
+        searchQuery={searchQuery}
       />
+
       <JobList jobs={jobs} loading={loading} />
+
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}

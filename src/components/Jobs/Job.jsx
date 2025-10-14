@@ -27,7 +27,7 @@ const Job = () => {
     <section className="bg-gray-50">
       <div className="py-12 px-4 max-w-7xl mx-auto">
         <div className="flex justify-between items-center px-4 md:px-8 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold">All Jobs</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Jobs</h2>
           <Link
             to="/jobs"
             className="btn btn-primary px-4 py-4 rounded-full text-lg"
