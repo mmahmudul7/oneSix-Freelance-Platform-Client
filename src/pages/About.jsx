@@ -1,5 +1,5 @@
 import {motion} from "framer-motion";
-import {Users, Code, Paintbrush} from "lucide-react";
+import {Users, PanelsTopLeft, SquareTerminal, PenTool} from "lucide-react";
 
 const About = () => {
   return (
@@ -27,18 +27,32 @@ const About = () => {
           deliver quality, innovation, and results.
         </motion.p>
 
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {/* Design & Branding */}
           <motion.div
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <Paintbrush className="mx-auto text-blue-500 mb-4" size={40} />
+            <PenTool className="mx-auto text-blue-500 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Design & Branding</h3>
             <p className="text-gray-600">
-              We create clean and professional visuals — from logo redraws and
-              color adjustments to vector conversions and image optimization —
-              ready for printing, engraving, or digital use.
+              We craft clean and professional visuals — from logo redraws, color
+              corrections, and vector conversions to image optimization — ready
+              for printing, engraving, or digital platforms.
+            </p>
+          </motion.div>
+
+          {/* Python Automation */}
+          <motion.div
+            whileHover={{scale: 1.05}}
+            className="bg-white rounded-2xl shadow-lg p-6 text-center"
+          >
+            <SquareTerminal className="mx-auto text-blue-500 mb-4" size={40} />
+            <h3 className="text-xl font-semibold mb-2">App & Automation</h3>
+            <p className="text-gray-600">
+              We create custom <strong>Python automation tools</strong> that
+              handle repetitive tasks, process data, and connect APIs — saving
+              time and helping businesses run smarter and more efficiently.
             </p>
           </motion.div>
 
@@ -47,12 +61,13 @@ const About = () => {
             whileHover={{scale: 1.05}}
             className="bg-white rounded-2xl shadow-lg p-6 text-center"
           >
-            <Code className="mx-auto text-blue-500 mb-4" size={40} />
+            <PanelsTopLeft className="mx-auto text-blue-500 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Web Development</h3>
             <p className="text-gray-600">
-              We build fast, modern websites and web apps using Django and React
-              — built for performance, scalability, and user experience.
-              Automation tools help save time and streamline work.
+              We build modern, high-performance websites and web apps using{" "}
+              <strong>Django</strong> and <strong>React</strong>, ensuring
+              responsive design, scalability, and smooth user experience across
+              all devices.
             </p>
           </motion.div>
 
@@ -64,9 +79,9 @@ const About = () => {
             <Users className="mx-auto text-blue-500 mb-4" size={40} />
             <h3 className="text-xl font-semibold mb-2">Team Collaboration</h3>
             <p className="text-gray-600">
-              Our creative team works together to deliver consistent quality,
-              unique ideas, and modern solutions — bringing every client’s
-              vision to life with precision and passion.
+              Our creative team works together to bring ideas to life —
+              combining design, code, automation and strategy to deliver
+              consistent quality and real results for every client we work with.
             </p>
           </motion.div>
         </div>

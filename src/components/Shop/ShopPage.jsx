@@ -9,10 +9,13 @@ const ShopPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [priceRange, setPriceRange] = useState([1, 1000]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const {jobs, loading, totalPages} = useFetchJobs(
     currentPage,
     priceRange,
-    selectedCategory
+    selectedCategory,
+    searchQuery
   );
 
   const categories = useFetchCategories();
@@ -35,6 +38,7 @@ const ShopPage = () => {
         categories={categories}
         selectedCategory={selectedCategory}
         handleCategoryChange={setSelectedCategory}
+        handleSearchQuery={setSearchQuery}
       />
       <JobList jobs={jobs} loading={loading} />
       <Pagination
