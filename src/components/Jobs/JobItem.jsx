@@ -11,11 +11,11 @@ const JobItem = ({job}) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-gray-800 font-medium link link-hover">
+        <h2 className="card-title text-base-800 font-medium link link-hover">
           {job.name}
         </h2>
         <div className="flex justify-between items-center mt-2">
-          <span className="font-bold text-lg text-gray-900">
+          <span className="font-bold text-lg text-base-900">
             From ${job.price}
           </span>
           <button className="btn btn-primary btn-sm">Buy Now</button>

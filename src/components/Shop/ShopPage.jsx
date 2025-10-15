@@ -43,7 +43,7 @@ const ShopPage = () => {
     <div className="max-w-7xl mx-auto px-4 pt-8 pb-16 space-y-8 ">
       {/* Title */}
       <div className="flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-gray-800 border-b pb-2">
+        <h1 className="text-3xl font-bold text-shadow-base-content border-b pb-2">
           All Jobs
         </h1>
       </div>

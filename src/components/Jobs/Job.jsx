@@ -79,7 +79,7 @@ const Job = () => {
 
         {/* Empty State */}
         {!isLoading && !error && jobs.length === 0 && (
-          <div className="text-center text-gray-500 mt-10">
+          <div className="text-center text-base-500 mt-10">
             <img
               src="/no-data.svg"
               alt="No jobs"

@@ -19,11 +19,11 @@ const Category = () => {
   }, []);
 
   return (
-    <section className="py-16 border-t border-gray-100">
+    <section className="py-16 border-t border-base-100">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-base-800 tracking-tight">
             Browse Categories
           </h2>
           <Link
@@ -40,7 +40,7 @@ const Category = () => {
             {[...Array(4)].map((_, i) => (
               <div
                 key={i}
-                className="h-40 rounded-xl bg-gray-200 animate-pulse"
+                className="h-40 rounded-xl bg-blue-600 animate-pulse"
               ></div>
             ))}
           </div>
@@ -64,7 +64,7 @@ const Category = () => {
 
         {/* Empty State */}
         {!loading && !error && categories.length === 0 && (
-          <p className="text-center text-gray-500 mt-6">No categories found.</p>
+          <p className="text-center text-base-500 mt-6">No categories found.</p>
         )}
       </div>
     </section>

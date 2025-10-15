@@ -20,10 +20,12 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-gray-50 to-gray-300">
+    <section className="py-16 bg-gradient-to-b bg-base-200">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold">Why Choose Onesix?</h2>
-        <p className="text-gray-900 mt-2">
+        <h2 className="text-3xl font-bold text-base-content">
+          Why Choose Onesix?
+        </h2>
+        <p className="text-base-content mt-2">
           Empowering freelancers & clients equally
         </p>
       </div>
@@ -32,7 +34,7 @@ const Features = () => {
         {features.map((f, i) => (
           <div
             key={i}
-            className="card bg-base-200 shadow-md hover:shadow-xl transition-all"
+            className="card bg-base-100 shadow-md hover:shadow-xl transition-all"
           >
             <div className="card-body items-center text-center">
               {f.icon}
