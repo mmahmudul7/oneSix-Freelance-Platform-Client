@@ -10,7 +10,7 @@ const JobList = ({jobs, loading}) => {
 
   if (jobs.length === 0)
     return (
-      <div className="flex justify-center items-center py-20 text-gray-500">
+      <div className="flex justify-center items-center py-20 text-base-content">
         No jobs found.
       </div>
     );

@@ -12,7 +12,7 @@ const FilterSection = ({
   return (
     <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {/* Price Range */}
-      <div className="bg-white p-4 rounded-lg shadow">
+      <div className="bg-base-100 p-4 rounded-lg shadow border border-base-300">
         <label className="block text-sm font-medium text-base-content mb-2">
           Price Range
         </label>
@@ -31,7 +31,7 @@ const FilterSection = ({
               );
               handlePriceChange(0, val);
             }}
-            className="w-20 p-2 border rounded-md"
+            className="w-20 p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
           />
           {/* Min Price Range */}
           <input
@@ -41,7 +41,7 @@ const FilterSection = ({
             step="1"
             value={priceRange[0]}
             onChange={(e) => handlePriceChange(0, Number(e.target.value))}
-            className="w-full"
+            className="w-full accent-primary"
           />
         </div>
 
@@ -59,7 +59,7 @@ const FilterSection = ({
               );
               handlePriceChange(1, val);
             }}
-            className="w-20 p-2 border rounded-md"
+            className="w-20 p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
           />
           {/* Max Price Range */}
           <input
@@ -69,7 +69,7 @@ const FilterSection = ({
             step="1"
             value={priceRange[1]}
             onChange={(e) => handlePriceChange(1, Number(e.target.value))}
-            className="w-full"
+            className="w-full accent-primary"
           />
         </div>
 
@@ -80,12 +80,12 @@ const FilterSection = ({
       </div>
 
       {/* Category Filter */}
-      <div className="bg-white p-4 rounded-lg shadow">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="bg-base-100 p-4 rounded-lg shadow border border-base-300">
+        <label className="block text-sm font-medium text-base-content mb-2">
           Category
         </label>
         <select
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
           value={selectedCategory}
           onChange={(e) => handleCategoryChange(e.target.value)}
         >
@@ -99,8 +99,8 @@ const FilterSection = ({
       </div>
 
       {/* Search */}
-      <div className="bg-white p-4 rounded-lg shadow">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="bg-base-100 p-4 rounded-lg shadow border border-base-300">
+        <label className="block text-sm font-medium text-base-content mb-2">
           Search
         </label>
         <input
@@ -108,17 +108,17 @@ const FilterSection = ({
           value={searchQuery}
           onChange={(e) => handleSearchQuery(e.target.value)}
           placeholder="Search jobs ..."
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-md border-base-300 bg-base-100 text-base-content focus:outline-none focus:ring-2 focus:ring-primary"
         />
       </div>
 
       {/* Sorting */}
-      <div className="bg-white p-4 rounded-lg shadow">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+      <div className="bg-base-100 p-4 rounded-lg shadow border border-base-300">
+        <label className="block text-sm font-medium text-base-content mb-2">
           Sort by Price
         </label>
         <select
-          className="w-full p-2 border rounded-md"
+          className="w-full p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
           value={sortOrder}
           onChange={(e) => handleSorting(e.target.value)}
         >

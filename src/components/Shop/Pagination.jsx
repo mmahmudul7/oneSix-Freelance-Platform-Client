@@ -19,7 +19,7 @@ const Pagination = ({totalPages, currentPage, handlePageChange}) => {
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
+        className="px-3 py-1 rounded bg-base-200 text-base-content disabled:opacity-50 hover:bg-base-300 transition-colors"
       >
         Prev
       </button>
@@ -29,13 +29,15 @@ const Pagination = ({totalPages, currentPage, handlePageChange}) => {
         <>
           <button
             onClick={() => handlePageChange(1)}
-            className={`px-3 py-1 rounded ${
-              currentPage === 1 ? "bg-primary text-white" : "bg-gray-200"
+            className={`px-3 py-1 rounded transition-colors ${
+              currentPage === 1
+                ? "bg-primary text-white"
+                : "bg-base-200 text-base-content hover:bg-base-300"
             }`}
           >
             1
           </button>
-          {startPage > 2 && <span className="px-2">...</span>}
+          {startPage > 2 && <span className="px-2 text-base-content">...</span>}
         </>
       )}
 
@@ -44,8 +46,10 @@ const Pagination = ({totalPages, currentPage, handlePageChange}) => {
         <button
           key={page}
           onClick={() => handlePageChange(page)}
-          className={`px-3 py-1 rounded ${
-            currentPage === page ? "bg-primary text-white" : "bg-gray-200"
+          className={`px-3 py-1 rounded transition-colors ${
+            currentPage === page
+              ? "bg-primary text-white"
+              : "bg-base-200 text-base-content hover:bg-base-300"
           }`}
         >
           {page}
@@ -55,13 +59,15 @@ const Pagination = ({totalPages, currentPage, handlePageChange}) => {
       {/* Last page */}
       {endPage < totalPages && (
         <>
-          {endPage < totalPages - 1 && <span className="px-2">...</span>}
+          {endPage < totalPages - 1 && (
+            <span className="px-2 text-base-content">...</span>
+          )}
           <button
             onClick={() => handlePageChange(totalPages)}
-            className={`px-3 py-1 rounded ${
+            className={`px-3 py-1 rounded transition-colors ${
               currentPage === totalPages
                 ? "bg-primary text-white"
-                : "bg-gray-200"
+                : "bg-base-200 text-base-content hover:bg-base-300"
             }`}
           >
             {totalPages}
@@ -73,7 +79,7 @@ const Pagination = ({totalPages, currentPage, handlePageChange}) => {
       <button
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="px-3 py-1 rounded bg-gray-200 disabled:opacity-50"
+        className="px-3 py-1 rounded bg-base-200 text-base-content disabled:opacity-50 hover:bg-base-300 transition-colors"
       >
         Next
       </button>
