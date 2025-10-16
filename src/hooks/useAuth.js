@@ -2,12 +2,14 @@ import {useEffect, useState} from "react";
 import apiClient from "../services/api-client";
 
 const useAuth = () => {
+  const [user, setUser] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+
   const getToken = () => {
     const token = localStorage.getItem("authTokens");
     return token ? JSON.parse(token) : null;
   };
 
-  const [user, setUser] = useState(null);
   const [authTokens, setAuthTokens] = useState(getToken());
 
   useEffect(() => {
@@ -28,16 +30,41 @@ const useAuth = () => {
 
   // Login User
   const loginUser = async (userData) => {
+    setErrorMsg("");
     try {
       const response = await apiClient.post("/auth/jwt/create/", userData);
       setAuthTokens(response.data);
       localStorage.setItem("authTokens", JSON.stringify(response.data));
+
+      // After login set user
+      await fetchUserProfile();
     } catch (error) {
-      console.log("Login Error", error.data?.response);
+      setErrorMsg(error.response.data?.detail);
     }
   };
 
-  return {user, loginUser};
+  // Register User
+  const registerUser = async (userData) => {
+    setErrorMsg("");
+    try {
+      await apiClient.post("/auth/users/", userData);
+    } catch (error) {
+      if (error.response && error.response.data) {
+        const errorMessage = Object.values(error.response.data)
+          .flat()
+          .join("\n");
+        setErrorMsg(errorMessage);
+        return {success: false, message: errorMessage};
+      }
+      setErrorMsg("Registration failed. Please try again.");
+      return {
+        success: false,
+        message: "Registration failed. Please try again.",
+      };
+    }
+  };
+
+  return {user, errorMsg, loginUser, registerUser};
 };
 
 export default useAuth;

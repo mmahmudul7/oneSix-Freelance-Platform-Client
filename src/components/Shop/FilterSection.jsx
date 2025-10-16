@@ -10,7 +10,7 @@ const FilterSection = ({
   handleSorting,
 }) => {
   return (
-    <div className="my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {/* Price Range */}
       <div className="bg-base-100 p-4 rounded-lg shadow border border-base-300">
         <label className="block text-sm font-medium text-base-content mb-2">
@@ -43,10 +43,10 @@ const FilterSection = ({
           />
         </div>
 
-        <div className="flex justify-between text-xs text-gray-500 mt-2">
+        {/* <div className="flex justify-between text-xs text-gray-500 mt-2">
           <span>Min: $1</span>
           <span>Max: ${priceRange[1]}</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Category Filter */}

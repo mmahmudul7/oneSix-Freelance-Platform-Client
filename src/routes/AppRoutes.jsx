@@ -5,6 +5,8 @@ import MainLayout from "../layouts/MainLayout";
 import Shop from "../pages/Shop";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "../components/PrivateRoute";
+import Dashboard from "../pages/Dashboard";
 
 const AppRoutes = () => {
   return (
@@ -15,6 +17,14 @@ const AppRoutes = () => {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route
+          path="dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
       </Route>
     </Routes>
   );
