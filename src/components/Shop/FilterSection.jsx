@@ -17,65 +17,35 @@ const FilterSection = ({
           Price Range
         </label>
 
-        <div className="flex items-center space-x-4 mb-2">
-          {/* Min Price Input */}
-          <input
-            type="number"
-            min="1"
-            max={priceRange[1]}
-            value={priceRange[0]}
-            onChange={(e) => {
-              const val = Math.min(
-                Math.max(Number(e.target.value), 1),
-                priceRange[1]
-              );
-              handlePriceChange(0, val);
-            }}
-            className="w-20 p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
-          />
-          {/* Min Price Range */}
-          <input
-            type="range"
-            min="1"
-            max={priceRange[1]}
-            step="1"
-            value={priceRange[0]}
-            onChange={(e) => handlePriceChange(0, Number(e.target.value))}
-            className="w-full accent-primary"
-          />
-        </div>
-
         <div className="flex items-center space-x-4">
-          {/* Max Price Input */}
-          <input
-            type="number"
-            min={priceRange[0]}
-            max="1000"
-            value={priceRange[1]}
-            onChange={(e) => {
-              const val = Math.max(
-                Math.min(Number(e.target.value), 1000),
-                priceRange[0]
-              );
-              handlePriceChange(1, val);
-            }}
-            className="w-20 p-2 border rounded-md border-base-300 bg-base-100 text-base-content"
-          />
-          {/* Max Price Range */}
+          {/* Price Range Slider */}
           <input
             type="range"
-            min={priceRange[0]}
+            min="1"
             max="1000"
             step="1"
             value={priceRange[1]}
             onChange={(e) => handlePriceChange(1, Number(e.target.value))}
             className="w-full accent-primary"
           />
+
+          {/* Price Input Box */}
+          <input
+            type="number"
+            min="1"
+            max="1000"
+            value={priceRange[1]}
+            onChange={(e) => {
+              const val = Math.min(Math.max(Number(e.target.value), 1), 1000);
+              handlePriceChange(1, val);
+            }}
+            className="w-24 p-2 border rounded-md border-base-300 bg-base-100 text-base-content text-center"
+          />
         </div>
 
-        <div className="flex justify-between text-sm text-gray-600 mt-2">
-          <span>${priceRange[0]}</span>
-          <span>${priceRange[1]}</span>
+        <div className="flex justify-between text-xs text-gray-500 mt-2">
+          <span>Min: $1</span>
+          <span>Max: ${priceRange[1]}</span>
         </div>
       </div>
 
