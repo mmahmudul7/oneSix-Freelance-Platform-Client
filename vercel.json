@@ -15,12 +15,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://onesix.dev/$1",
-      "statusCode": 301
-    }
   ]
 }
