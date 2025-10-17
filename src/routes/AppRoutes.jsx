@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../components/PrivateRoute";
 import Dashboard from "../pages/Dashboard";
+import ActivateAccount from "../components/Registration/ActivateAccount";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="about" element={<About />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="activate/:uid/:token" element={<ActivateAccount />} />
         <Route
           path="dashboard"
           element={

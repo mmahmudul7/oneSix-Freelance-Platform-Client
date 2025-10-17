@@ -50,7 +50,8 @@ const useAuth = () => {
       await apiClient.post("/auth/users/", userData);
       return {
         success: true,
-        message: "Registration successfull. Redirecting...",
+        message:
+          "Registration successfull. Check your email to activate  your account.",
       };
     } catch (error) {
       if (error.response && error.response.data) {
